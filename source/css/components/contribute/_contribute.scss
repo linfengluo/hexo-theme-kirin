@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  打赏样式
+//
+//----------------------------------------------
+
+.contribute{
+  margin: $space*5 0;
+  text-align: center;
+
+  &-title{
+    color: $font-color-base;
+  }
+
+  &-toggle{
+    display: inline-block;
+    text-align: center;
+    font-size: 80px;
+    line-height: 80px;
+    color: $color-orange;
+    @include prefixer(border-radius, 10px);
+
+    &:hover{
+      color: $link-color-blue;
+    }
+  }
+
+  &-img{
+    margin: $space*4 auto;
+    @include clearfix();
+  }
+
+  &-wechat, &-alipay{
+    width: 50%;
+    float: left;
+
+    img{
+      display: inline-block;
+      margin: 0 $space*4;
+      border: $space solid $border-color-base;
+      width: 250px;
+      max-width: 100%;
+    }
+  }
+
+  &-wechat{
+    text-align: right;
+  }
+
+  &-alipay{
+    text-align: left;
+  }
+
+  blockquote{
+    padding: $space $space*5;
+    font-weight: normal;
+    font-size: $font-size-base;
+    border-left: $space solid $color-blue;
+    background: $color-gary-e;
+    height: 135px;
+    overflow: hidden;
+    @include transition(all 0.5s ease-in-out);
+  }
+}

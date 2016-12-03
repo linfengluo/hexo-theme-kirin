@@ -1,0 +1,39 @@
+
+@media only screen and (max-width: 1024px) {
+  .main-wrapper{
+    margin-left: 50px;
+
+    .content{
+      padding: 0 0 150px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .main-wrapper{
+    margin:35px 0 0 0;
+
+    .content{
+      padding: 0 0 150px 0;
+
+      .post-content{
+        padding: 0 $space*2;
+      }
+    }
+  }
+
+  .scrolly-wrapper{
+    right: $space*2;
+
+    .scrolly-to-top{
+      &:hover{
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  主页样式
+//
+//----------------------------------------------
+
+.recent-post{
+  .post{
+    margin: 0 auto $space*5;
+    padding-bottom: $space;
+    color: $font-color-base;
+    background-color: $bg-color-content;
+    border: 1px solid $border-color-base;
+
+    &-title{
+      color: $font-color-title;
+
+      &:hover{
+        color: $link-color-orange;
+      }
+    }
+  }
+}
+
+.posts-expand{
+  padding-bottom: $space*4;
+  margin: 0 auto $space*5;
+  color: $font-color-base;
+  background-color: $bg-color-content;
+  border: 1px solid $border-color-base;
+
+  .page-content{
+    border: none;
+  }
+}

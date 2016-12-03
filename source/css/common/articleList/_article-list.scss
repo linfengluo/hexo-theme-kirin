@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  文章列表公用样式
+//
+//----------------------------------------------
+
+.article{
+    margin: 0 auto $space*5;
+
+  &-list{
+    padding: $space 10% $space*10;
+
+    &-item{
+      position: relative;
+      padding-left: $space*5;
+      @include transition(all 0.5s ease-in-out);
+
+      &:after{
+        position: absolute;
+        top: 0;
+        left: -5px;
+        bottom: 0;
+        margin: auto;
+        display: block;
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: $border-color-base;
+        @include prefixer(border-radius, 50%);
+        @include transition(all 0.5s ease-in-out);
+
+      }
+
+      &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -1px;
+        bottom: 0;
+        margin: auto;
+        display: block;
+        content: "";
+        height: 100%;
+        width: 2px;
+        background: $color-gary-e;
+        @include transition(all 0.5s ease-in-out);
+      }
+
+      &:hover{
+        background: $color-gary-e;
+
+        @at-root &:after{
+          left: -10px;
+          width: 20px;
+          height: 20px;
+          background: $link-color-blue;
+        }
+      }
+
+      &.article-list-title{
+        &:hover{
+          background: none;
+
+          @at-root &:after{
+            left: -5px;
+            width: 10px;
+            height: 10px;
+            background: $color-gary-e;
+          }
+        }
+      }
+    }
+
+    &-link{
+      position: relative;
+      display: block;
+      padding-left: 50px;
+      line-height: $list-height-base;
+      color: $font-color-base;
+      @include transition(all 0.5s ease-in-out);
+
+      &:hover{
+        color: $link-color-orange;
+      }
+    }
+
+    &-time{
+      position: absolute;
+      top: $space;
+      left: $space*5;
+      bottom: $space;
+      margin: auto;
+      font-size: 12px;
+      line-height: $list-height-base;
+      height: $list-height-base;
+      color: $font-color-base;
+    }
+  }
+}

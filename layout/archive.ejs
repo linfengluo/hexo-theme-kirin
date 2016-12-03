@@ -1,0 +1,48 @@
+
+<%
+var categoriesList = list_categories({ show_count: false }),
+  tagsList = list_tags({ show_count: false }),
+  archivesList = list_archives({ show_count: false });
+%>
+<div id="article" class="article page-content">
+  <header class="header">
+    <h1>
+      <%= __('title.archive')%>
+    </h1>
+  </header>
+  <% var year = ""; %>
+
+  <ul class="article-list main-content">
+    <% page.posts.each(function(article) { %>
+
+      <% article.year = date(article.year, 'YYYY');%>
+        <% if(article.year != year){%>
+          <% year = article.year;%>
+          <li class="article-list-item article-list-title">
+            <h2><%- year %></h2>
+          </li>
+      <% } %>
+      <li class="article-list-item">
+        <time datetime="<%=date_xml(article.date)%>" class="article-list-time">
+          <%=date(article.date, "MM-DD")%>
+        </time>
+        <% if (article.link) { %>
+        <!-- external link -->
+        <a href="<%=url_for(article.link)%>" class="article-list-link" target="_blank">
+          <%=article.title || 'No Title'%>
+        </a>
+        <% } else { %>
+        <!-- internal link -->
+        <a href="<%=url_for(article.path)%>" class="article-list-link">
+          <%=article.title || 'No Title'%>
+        </a>
+        <% } %>
+      </li>
+    <% }); %>
+  </ul>
+
+</div>
+
+
+
+<%-partial('components/pagination/pagination')%>

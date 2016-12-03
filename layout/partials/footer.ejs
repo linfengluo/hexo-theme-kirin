@@ -1,0 +1,16 @@
+
+<p>
+    <span class="copyright">&copy;</span><%= date(Date.now(), "YYYY") %> <a href="<%- theme.url %>" class="author"><%- theme.author %></a>
+</p>
+<p>
+    <p>Power by <a href="http://hexo.io">hexo</a> | Theme by <a href="">kirin</a></p>
+</p>
+<p>
+    <% if(theme.license){%>
+        <% if(theme.license_type == 'byNc4.0'){%>
+            本站采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。</p>
+        <%}else{%>
+            本站采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+        <% } %>
+    <% } %>
+</p>

@@ -1,0 +1,25 @@
+<% if(page.prev || page.next){%>
+    <nav id="article-nav" class="article-nav main-content">
+        <% if (page.prev){ %>
+            <a href="<%- url_for(page.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap older-page">
+                <span class="article-nav-caption">&lt;&lt;</span>
+                <% if(page.prev.title === ""){ %>
+                    <span class="article-nav-title">没有标题的文章</span>
+                <%}else{%>
+                    <span class="article-nav-title"><%= page.prev.title %></span>
+                <%}%>
+            </a>
+        <% } %>
+        <% if (page.next){ %>
+            <a href="<%- url_for(page.next.path) %>" id="article-nav-older" class="article-nav-link-wrap next-page">
+                <% if(page.next.title === ""){ %>
+                    <span class="article-nav-title">没有标题的文章</span>
+                <%}else{%>
+                    <span class="article-nav-title"><%= page.next.title %></span>
+                <%}%>
+                <span class="article-nav-caption">&gt;&gt;</span>
+            </a>
+        <% } %>
+    </nav>
+<%} %>
+

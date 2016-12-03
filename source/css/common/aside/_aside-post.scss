@@ -1,0 +1,45 @@
+.panel-aside-post{
+  height: 100%;
+  position: relative;
+
+  .panel-aside-content{
+    position: relative;
+    margin-left: $space*10;
+    width: 250px;
+    height: 100%;
+    overflow-y: auto;
+    z-index: $zIndex-content;
+  }
+
+  .directory-title{
+    padding: $space*4 0 $space*4;
+    color: $aside-title-color;
+    line-height: $space*10;
+    font-size: $font-size-title;
+    @include ellipsis();
+  }
+
+  .directory{
+    padding-left: $space*4;
+    text-align: left;
+    max-width: 100%;
+    overflow-y: auto;
+
+    &-link{
+      display: block;
+      color: $aside-font-color;
+
+      &:hover{
+        color: $link-color-blue;
+      }
+    }
+
+    &-child{
+      margin-left: $space*2;
+    }
+
+    .active-link{
+      color: $link-color-orange;
+    }
+  }
+}

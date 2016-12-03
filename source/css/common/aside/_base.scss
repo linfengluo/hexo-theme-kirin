@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  侧边栏基本样式
+//
+//----------------------------------------------
+
+.panel-aside{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  //background: url("../../images/bg.jpg") top left no-repeat;
+  //background-size: cover;
+  text-align: center;
+  z-index: 1;
+  @include transition(all 0.5s ease-in-out);
+
+
+  &-cover{
+    display: block;
+    position: absolute;
+    z-index: $zIndex-cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(61, 66, 96, 0.6);
+    background-image: linear-gradient(140deg,rgba(61, 66, 96, 0.6) 20%, rgba(21, 23, 34, 0.8));
+  }
+
+  .divider{
+    margin: $space*5 auto;
+    width: 50%;
+  }
+}

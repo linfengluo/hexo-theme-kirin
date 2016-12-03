@@ -1,0 +1,47 @@
+.panel-aside-nav{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  padding-top: $space*4;
+  width: 50px;
+  height: 100%;
+  z-index: $zIndex-content;
+  background: $color-black;
+  background: rgba(0,0,0,0.2);
+  filter:Alpha(opacity=20);
+
+  .aside-social-lite{
+    position: absolute;
+    bottom: $space*4;
+  }
+
+  .item{
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 50px;
+    color: $aside-font-color;
+
+    &:hover{
+      color: $link-color-blue;
+
+      &::after {
+        content: attr(data-title);    //取到data-title属性的值
+        display: inline-block;
+        padding: $space/2 0;
+        border: 1px solid #ddd;
+        border-radius: $space;
+        position: absolute;
+        top: 5px;
+        left: 50px;
+        background: rgba(0,0,0,0.7);
+        color: $color-orange;
+        @include ellipsis(200%);
+      }
+    }
+  }
+
+  .iconfont{
+    font-size: $font-size-nav-icon;
+  }
+}

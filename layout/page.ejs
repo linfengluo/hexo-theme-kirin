@@ -1,0 +1,11 @@
+
+  <% if(page.type === 'categories') {%>
+    <%-partial('partials/categorys')%>
+  <%}else if(page.type === 'tags'){%>
+    <%-partial('partials/tags')%>
+  <%}else{%>
+    <%-partial('partials/about')%>
+  <%}%>
+
+
+

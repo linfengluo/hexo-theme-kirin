@@ -1,0 +1,55 @@
+
+
+@media only screen and (max-width: 1024px){
+  .panel-aside{
+    width: 50px;
+
+    &-normal{
+      padding: 0;
+    }
+
+    &-content{
+      display: none;
+    }
+  }
+
+  .contribute-wechat, .contribute-alipay{
+    img{
+      margin: 0;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 1024px){
+  .panel-aside-nav[data-post='false']{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .panel-aside{
+    width: 100%;
+    height: 35px;
+    overflow: hidden;
+
+    &-nav{
+      display: none;
+    }
+  }
+
+
+}
+
+@media only screen and (min-width: 667px) {
+  .panel-aside-mobile{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .contribute-wechat, .contribute-alipay{
+    float: none;
+    margin: 0 auto;
+  }
+}

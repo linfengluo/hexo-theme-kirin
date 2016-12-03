@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+.panel-aside-normal{
+  padding: $space * 20 $space * 10 $space * 10;
+
+  .panel-aside-content{
+    position: relative;
+    height: 100%;
+    z-index: $zIndex-content;
+  }
+
+  .nav{
+    display: inline-table;
+    word-spacing: -6px;
+    display: flex;
+    flex-flow: row;
+
+    .item{
+      display: inline-block;
+      word-spacing: 0;
+      flex: 1;
+    }
+  }
+
+  .logo{
+    display: inline-block;
+    @include prefixer(border-radius, 50%);
+
+    &:hover{
+      .avatar{
+        border-color: $border-color-orange;
+        @include rotate(360deg);
+      }
+    }
+
+    .avatar{
+      display: inline-block;
+      width: 110px;
+      height: 110px;
+      border: $space solid $color-width;
+      @include prefixer(border-radius, 50%);
+      @include transition(all 0.5s ease-in-out);
+    }
+  }
+
+  .title{
+    color: $aside-title-color;
+    font-size: $font-size-title;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .subtile{
+    color:$aside-font-color;
+    font-size: $font-size-subtitle;
+    letter-spacing: 1px;
+  }
+
+  //----------------------------------------------
+  //  侧边栏日志、归档、标签导航样式
+  //
+  //----------------------------------------------
+
+  .aside-nav{
+    line-height: 1.15;
+
+    .item{
+      padding: 0 $space*3;
+      border-right: 1px solid $border-color-base;
+      font-size: $font-size-nav;
+      color: $aside-font-color;
+      @include ellipsis();
+
+      &:last-child{
+        border: none;
+      }
+
+      &:hover{
+        color: $link-color-blue;
+      }
+
+      &-count{
+        display: inline-block;
+        padding-bottom: $space;
+        width: 100%;
+        font-weight: bolder;
+      }
+
+      &-name{
+        font-size: 16px;
+      }
+    }
+  }
+
+  //----------------------------------------------
+  // 侧边栏网站导航样式
+  //
+  //----------------------------------------------
+
+  .aside-menu{
+    margin: $space*5 0;
+
+    .iconfont{
+      font-size: $font-size-nav-icon;
+    }
+
+    .item{
+      position: relative;
+      color: $aside-font-color;
+
+      &:hover{
+        color: $link-color-blue;
+
+        &::after {
+          content: attr(data-title);    //取到data-title属性的值
+          display: inline-block;
+          padding: $space/2 0;
+          border: 1px solid #ddd;
+          border-radius: $space;
+          position: absolute;
+          top: -30px;
+          left: -50%;
+          background: rgba(0,0,0,0.7);
+          color: $color-orange;
+          @include ellipsis(200%);
+        }
+      }
+    }
+  }
+
+  //----------------------------------------------
+  //  侧边栏社交账号导航样式
+  //
+  //----------------------------------------------
+
+  .aside-social{
+    margin: $space*5 0;
+
+    .iconfont{
+      font-size: $font-size-nav-icon;
+    }
+
+    .nav{
+      display: flex;
+      flex-flow: row;
+    }
+
+    .item{
+      display: inline-block;
+      color: $aside-font-color;
+      &-GitHub{
+        &:hover{
+          color: #5647ca;
+        }
+      }
+      &-LinkLabel{
+        &:hover{
+          color: #0077b5;
+        }
+      }
+      &-Email{
+        &:hover{
+          color: #f1f546;
+        }
+      }
+      &-Twitter{
+        &:hover{
+          color: #1ab2e8;
+        }
+      }
+      &-Weibo{
+        &:hover{
+          color: #ff8140;
+        }
+      }
+      &-Rss{
+        &:hover{
+          color: #ef7522;
+        }
+      }
+
+    }
+  }
+}

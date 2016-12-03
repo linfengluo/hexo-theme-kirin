@@ -1,0 +1,16 @@
+<div class="panel-aside-nav" data-post="<%- is_post() && toc(page.content, {class: 'directory'}) !== "" %>">
+    <nav class="aside-nav-lite">
+        <% for(var i in theme.menu) { %>
+        <a href="<%- url_for(theme.menu[i]) %>" class="item" data-title="<%= __('menu.'+ i)%>">
+            <i class="iconfont"><%- theme.menu_icons[i] %></i>
+        </a>
+        <% } %>
+    </nav>
+    <nav class="aside-social-lite">
+        <% for(var i in theme.social) { %>
+        <a href="<%- url_for(theme.social[i]) %>" class="item item-<%- i %>" data-title="<%= __('menu.'+ i)%>">
+            <i class="iconfont"><%- theme.social_icons[i] %></i>
+        </a>
+        <% } %>
+    </nav>
+</div>

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  分页样式
+//
+//----------------------------------------------
+.page-nav{
+  text-align: center;
+
+  .page-number, .extend{
+    display: inline-block;
+    min-width: 20px;
+    margin: 0 $space/2;
+    padding: 0 $space/2;
+    color: $color-gray-c;
+    @include prefixer(border-radius, $border-radius-base);
+  }
+
+  a{
+    &.page-number, &.extend{
+      background-color: $color-gray-5;
+
+      &:hover{
+        color: $color-gary-e;
+        background-color: $link-color-blue;
+      }
+    }
+  }
+
+  .current{
+    color: $color-gary-e;
+    background-color: $color-orange;
+  }
+}
+

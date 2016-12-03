@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  文章头部样式
+//
+//----------------------------------------------
+
+.post{
+
+  &-title{
+    -webkit-transition: color .3s;
+    transition: color .3s;
+
+    span{
+      cursor: default;
+    }
+  }
+
+  &-meta{
+    font-size: $font-size-base;
+    font-weight: normal;
+    @include ellipsis();
+
+    &-divider{
+      color: $border-color-base;
+    }
+
+
+    a{
+      color: $font-color-tips;
+      
+      span{
+        cursor: pointer;
+      }
+
+      &:hover{
+        color: $link-color-orange;
+      }
+    }
+
+    .iconfont{
+      color: $font-color-tips;
+    }
+
+    time{
+      color: $font-color-tips;
+    }
+  }
+}

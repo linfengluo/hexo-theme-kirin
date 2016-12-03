@@ -1,0 +1,22 @@
+<div class="panel-aside-mobile">
+    <a href="javascript:;" class="nav-btn J_mobileBtn">
+        <i class="iconfont list-icon">&#xe613;</i>
+    </a>
+    <div class="aside-mobile animated J_mobileNav">
+        <nav class="aside-nav-mobile">
+            <% for(var i in theme.menu) { %>
+            <a href="<%- url_for(theme.menu[i]) %>" class="item" data-title="<%= __('menu.'+ i)%>">
+                <i class="iconfont"><%- theme.menu_icons[i] %></i><%= __('menu.'+ i)%>
+            </a>
+            <% } %>
+        </nav>
+        <nav class="aside-social-mobile">
+            <% for(var i in theme.social) { %>
+            <a href="<%- url_for(theme.social[i]) %>" class="item item-<%- i %>" data-title="<%= __('menu.'+ i)%>">
+                <i class="iconfont"><%- theme.social_icons[i] %></i>
+            </a>
+            <% } %>
+        </nav>
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  下一篇样式
+//
+//----------------------------------------------
+.article-nav{
+  @include clearfix();
+
+  .article-nav-link-wrap{
+    display: inline-block;
+    color: $link-color-blue;
+    width: 50%;
+
+    &:hover{
+      color: $link-color-orange;
+    }
+
+    span{
+      vertical-align: middle;
+    }
+  }
+
+  .order-page{
+    float: left;
+    text-align: left;
+  }
+
+  .next-page{
+    float: right;
+    text-align: right;
+  }
+}

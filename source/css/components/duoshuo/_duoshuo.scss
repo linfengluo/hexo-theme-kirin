@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  多说样式
+//
+//----------------------------------------------
+
+.comments{
+  position: relative;
+  background-color: $color-width;
+  border: 1px solid $border-color-base;
+  padding: $space*10 10%;
+
+  &:before{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    @include triangle(leftTop, 100px, $color-orange);
+  }
+
+  #ds-bubble{
+    display: none;
+  }
+
+
+  #ds-thread{
+
+    #ds-reset{
+
+      a{
+        &.ds-like-thread-button{
+          background: none;
+          box-shadow: none;
+        }
+
+        &:hover{
+          .ds-like-thread-button{
+            background: $border-color-base;
+
+          }
+        }
+      }
+      .ds-sort{
+        a{
+          &.ds-current, &:active{
+            color: $color-orange;
+          }
+        }
+      }
+
+      .ds-post-liked{
+        a{
+          &.ds-post-likes{
+            color: $color-orange;
+          }
+        }
+      } 
+
+      .ds-avatar{
+        img{
+          @include transition(all 0.5s ease-in-out);
+        }
+
+      }
+
+      .ds-post{
+        &:hover{
+          .ds-avatar{
+            img{
+              @include rotate(360deg);
+              @include prefixer(border-radius, 50%);
+
+            }
+          }
+        }
+      }
+
+      .ds-highlight{
+        color: $color-orange !important;
+      }
+
+      .ds-textarea-wrappe{
+        background: #FFFFFF;
+      }
+    }
+  }
+}
+
+#ds-smilies-tooltip {
+  overflow: hidden;
+
+}
+
+
+

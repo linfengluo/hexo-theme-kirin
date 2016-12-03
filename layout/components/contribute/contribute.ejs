@@ -1,0 +1,30 @@
+<% if(theme.contribute){%>
+    <script>
+        function toggleContribute(){
+            var $contributeCode = $("#J_contributeCode");
+            if($contributeCode.height() === 125){
+                $contributeCode.height(410);
+            }else{
+                $contributeCode.height(125);
+            }
+        }
+    </script>
+    <section class="contribute main-content">
+        <blockquote id="J_contributeCode" style="height: 135px;">
+            <h4 class="contribute-title">您的打赏是我最大的鼓励</h4>
+            <a href="javascript:;" class="contribute-toggle iconfont" onclick="toggleContribute()">&#xe655;</a>
+            <div class="contribute-img">
+                <% if(theme.contribute_wechat){ %>
+                    <div class="contribute-wechat">
+                        <img src="<%-theme.contribute_wechat %>" alt="微信打赏">
+                    </div>
+                <%}%>
+                <% if(theme.contribute_alipay){ %>
+                    <div class="contribute-alipay">
+                        <img src="<%-theme.contribute_alipay %>" alt="支付宝打赏">
+                    </div>
+                <%}%>
+            </div>
+        </blockquote>
+    </section>
+<%} %>

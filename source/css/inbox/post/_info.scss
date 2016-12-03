@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  主页文章列表样式
+//
+//----------------------------------------------
+
+.recent-post{
+
+  .post{
+
+    &-meta{
+      margin: $space*2 10%;
+      border-top: 1px dashed $border-color-base;
+      width: 80%;
+
+      a{
+        color: $font-color-tips;
+
+        &:hover{
+          color: $link-color-orange;
+        }
+      }
+    }
+  }
+}

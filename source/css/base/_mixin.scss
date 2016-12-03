@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+// clearfix
+// 闭合子元素的浮动
+@mixin clearfix ($extend:true) {
+  @if $extend {
+    @extend %clearfix;
+  } @else {
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+}
+%clearfix{
+  @include clearfix(false);
+}
+
+// Text overflow
+// 元素可以设置宽度才可应用省略号
+%ellipsis-basic{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin ellipsis($width:100%) {
+  @extend %ellipsis-basic;
+  width:$width;
+}
+
+// Opacity
+// lte8使用filter兼容
+@mixin opacity($opacity:0.5) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity * 100);
+}
+%opacity{
+  @include opacity;
+}
+
+// triangle
+%triangle-basic{
+  content:"";
+  height: 0;
+  width: 0;
+  overflow:hidden;
+}
+@mixin triangle($direction, $size, $borderColor ) {
+  @extend %triangle-basic;
+  @if $direction == top {
+    border-bottom:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  }
+  @else if $direction == right {
+    border-left:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  }
+  @else if $direction == bottom {
+    border-top:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  }
+  @else if $direction == left {
+    border-right:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  }
+  @else if $direction == leftTop{
+    border-top: $size solid $borderColor;
+    border-right: $size solid transparent;
+  }
+}
+
+
+// 为颜色添加白色，以百分比形式
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+
+// 为颜色添加黑色，以百分比形式
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+// retina border
+// 0.5px实现 ios9
+@mixin retina-one-px() {
+  @supports (border-width: 0.5px) {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 3) {
+      border-width: 0.5px;
+    }
+  }
+}
+
+// linear-gradient实现
+// 安卓4.3- 不支持background-size的百分比
+@mixin retina-one-px-bg($direction: top, $color: $colorBorder) {
+  background-repeat: no-repeat;
+  @if $direction == top {
+    background-image: linear-gradient(to bottom, $color 50%, transparent 50%);
+    background-size: 100% 1px;
+  }
+  @if $direction == bottom {
+    background-image: linear-gradient(to top, $color 50%, transparent 50%);
+    background-size: 100% 1px;
+    background-position: left bottom;
+  }
+  @if $direction == left {
+    background-image: linear-gradient(to right, $color 50%, transparent 50%);
+    background-size: 1px 100%;
+  }
+  @if $direction == right {
+    background-image: linear-gradient(to left, $color 50%, transparent 50%);
+    background-size: 1px 100%;
+    background-position: right top;
+  }
+  @if $direction == v { // 左右两个边框
+    background-image: linear-gradient(to right, $color 50%, transparent 50%),linear-gradient(to left, $color 50%, transparent 50%);
+    background-size: 1px 100%;
+    background-position: left top, right top;
+  }
+  @if $direction == h { // 上下两个边框
+    background-image: linear-gradient(to bottom, $color 50%, transparent 50%), linear-gradient(to top, $color 50%, transparent 50%);
+    background-size: 100% 1px;
+    background-position: left top, left bottom;
+  }
+  @if $direction == all { // 上下左右四个边框
+    background-image: linear-gradient(to bottom, $color 50%, transparent 50%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to right, $color 50%, transparent 50%),linear-gradient(to left, $color 50%, transparent 50%);
+    background-size: 100% 1px, 100% 1px, 1px 100%, 1px 100%;
+    background-position: left top, left bottom, left top, right top;
+  }
+}
+
+// border和transform实现
+// 注意before和after的层级问题
+@mixin retina-one-px-border($direction: top, $color: #dddddd) {
+  box-sizing: border-box;
+
+  @if $direction == top or $direction == bottom{
+    right: 0;
+    height: 0;
+    transform: scaleY(0.5);
+    border-top: 1px solid $color;
+  }
+  @if $direction == bottom {
+    top: auto;
+    bottom: 0;
+  }
+  @if $direction == right or $direction == left{
+    width: 0;
+    bottom: 0;
+    transform: scaleX(0.5);
+    border-left: 1px solid $color;
+  }
+  @if $direction == right {
+    left: auto;
+    right: 0;
+  }
+  @if $direction == all {
+    width: 200%;
+    height: 200%;
+    transform-origin: left top;
+    transform: scale(0.5);
+    border: 1px solid $color;
+  }
+}
+
+// border top & bottom
+%border-tb {
+  position: relative;
+  &::before {
+    content: "";
+    @include retina-one-px-border(top);
+    z-index: 1;
+  }
+  &::after {
+    content: "";
+    @include retina-one-px-border(bottom);
+  }
+}
+
+// border all
+%border-all {
+  position: relative;
+  &::before {
+    content: "";
+    @include retina-one-px-border(all);
+    z-index: -1;
+  }
+}

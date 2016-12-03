@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  页面头部样式
+//
+//----------------------------------------------
+
+.page-content{
+  padding-bottom: $space*4;
+  color: $font-color-base;
+  background-color: $bg-color-content;
+  border: 1px solid $border-color-base;
+
+  &:hover{
+    .header{
+      border-color: $link-color-blue;
+    }
+  }
+
+  .header{
+    padding: $space*4 10%;
+    border-left: $space solid $color-orange;
+  }
+}

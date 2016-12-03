@@ -1,0 +1,45 @@
+<div class="panel-aside-inner panel-aside-normal">
+    <div class="panel-aside-content">
+        <a href="javascript:;" class="logo">
+            <img src="<%- theme.avatar %>" class="avatar" alt="主页">
+        </a>
+        <h1 class="title">
+            <%- theme.title %>
+        </h1>
+        <span class="subtile">
+        <%- theme.subtitle %>
+        </span>
+        <div class="divider"></div>
+        <nav class="aside-nav nav">
+            <% for(var i in theme.asideNav) { %>
+                <a href="<%- url_for(theme.asideNav[i]) %>" class="item">
+                    <span class="item-count"><%-  site[i].length %></span>
+                    <br>
+                    <span class="item-name"><%- __('menu.'+ i) %></span>
+                </a>
+            <% } %>
+        </nav>
+
+        <nav class="aside-menu nav">
+            <% for(var i in theme.menu) { %>
+                    <a href="<%- url_for(theme.menu[i]) %>" class="item" data-title="<%= __('menu.'+ i)%>">
+                        <i class="iconfont"><%- theme.menu_icons[i] %></i>
+                    </a>
+            <% } %>
+        </nav>
+
+        <div class="divider"></div>
+
+        <nav class="aside-social nav">
+            <% for(var i in theme.social) { %>
+                <a href="<%- url_for(theme.social[i]) %>" class="item item-<%- i %>">
+                    <i class="iconfont"><%- theme.social_icons[i] %></i>
+                </a>
+            <% } %>
+        </nav>
+    </div>
+    <%- partial('partials/aside/aside-lite-nav') %>
+    <%- partial('partials/aside/aside-mobile') %>
+
+    <div class="panel-aside-cover"></div>
+</div>

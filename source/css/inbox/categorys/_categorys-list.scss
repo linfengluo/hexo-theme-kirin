@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  分类列表样式
+//
+//----------------------------------------------
+
+.category{
+
+  &-list{
+
+    &-item{
+      font-size: $font-size-base;
+
+
+    }
+
+    &-link{
+      display: block;
+      line-height: $list-height-base;
+      color: $font-color-base;
+      border-bottom: 1px dashed $border-color-base;
+
+      &:hover{
+        color: $color-orange;
+      }
+    }
+
+    &-count{
+      display: inline-block;
+      margin-left: $space*5;
+    }
+
+    &-child{
+      padding-left: $space*5;
+
+      .category-list-item{
+        position: relative;
+        &:before{
+          content: "-";
+          position: absolute;
+          left: 0;
+          display: inline-block;
+          line-height: $space*7;
+        }
+      }
+
+      .category-list-link{
+        padding-left: $space*4;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="posts-expand">
+  <article id="post" class="post page-content">
+    <header class="header">
+        <h1 class="post-title">
+            <% if(page.title === ""){ %>
+                <span>貌似忘记写标题了！</span>
+            <%}else{%>
+                <span><%=page.title%></span>
+            <%}%>
+          <%- partial('components/pageMeta/page-meta') %>
+        </h1>
+
+    </header>
+    <div class="post-content main-content">
+      <%-page.content%>
+    </div>
+  </article>
+
+  <%-partial('components/contribute/contribute')%>
+  <%-partial('components/pagination/page-pagination')%>
+
+
+</div>
+<%-partial('components/comments/duoshuo')%>
+
+

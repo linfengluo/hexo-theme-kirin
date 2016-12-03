@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  代码高亮基本参数
+//
+// Code & Code Blocks
+// --------------------------------------------------
+$code-font-size               : 13px;
+$code-font-size               : 12px;
+$code-border-radius           : 3px;
+$line-height-base             : 2;
+$line-height-code-block       : 1.6;  // Can't be less than 1.3
+$code-font-family:            Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;;
+
+
+$highlight-deletion           : #008000;
+$highlight-addition           : #800000;
+
+$highlight-background         : #444444;
+$highlight-current-line       : #393939;
+$highlight-selection          : #515151;
+$highlight-foreground         : #cccccc;
+$highlight-comment            : #999999;
+$highlight-red                : #f2777a;
+$highlight-orange             : #f99157;
+$highlight-yellow             : #ffcc66;
+$highlight-green              : #99cc99;
+$highlight-aqua               : #66cccc;
+$highlight-blue               : #6699cc;
+$highlight-purple             : #cc99cc;
+$highlight-gutter-color       : $highlight-comment;
+$highlight-gutter-bg-color    : darken($highlight-background, 5%);

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// variables scss
+//-----------------------------------------------------
+
+//font-size
+$font-size-base:              14px;
+$font-size-h1:                26px;
+$font-size-h2:                24px;
+$font-size-h3:                22px;
+$font-size-h4:                20px;
+$font-size-h5:                18px;
+$font-size-h6:                16px;
+$font-size-title:             26px;
+$font-size-subtitle:          20px;
+$font-size-nav:               18px;
+$font-size-nav-icon:          24px;
+$font-line-height-base:       1.5;
+$font-family:                 "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+
+$space:                       5px;
+
+
+//color
+$color-blue:                  #37A7FF;
+$color-orange:                #ef7522;
+$color-purple:                #5647ca;
+
+$color-width:                 #ffffff;
+$color-width-f8           :   #f8f8f8;
+$color-gary-e:                #eeeeee;
+$color-gray-d:                #dddddd;
+$color-gray-c:                #cccccc;
+$color-gray-9:                #999999;
+$color-gray-7:                #777777;
+$color-gray-6:                #666666;
+$color-gray-5:                #555555;
+$color-gray-3:                #333333;
+$color-black:                 #000000;
+
+$bg-color-base:               $color-gary-e;
+$bg-color-content:            $color-width;
+
+$link-color-orange:           $color-orange;
+$link-color-blue:             $color-blue;
+$border-color-base:           $color-gray-d;
+$border-color-orange:         $color-orange;
+
+$border-radius-base:          3px;
+
+$font-color-base:             $color-gray-7;
+$font-color-title:            $color-gray-5;
+$font-color-tips:             $color-gray-9;
+
+$aside-font-color:            $color-gray-c;
+$aside-title-color:           $color-width;
+
+$zIndex-cover:                 0;
+$zIndex-content:               500;
+
+
+$list-height-base:              $space*7;
+
+// Table
+// --------------------------------------------------
+$table-width                    : 100%;
+$table-border-color             : $border-color-base;
+$table-font-size                : 14px;
+$table-content-alignment        : left;
+$table-content-vertical         : middle;
+$table-th-font-weight           : bold;
+$table-cell-padding             : $space;
+$table-cell-border-right-color  : $border-color-base;
+$table-cell-border-bottom-color : $border-color-base;
+$table-row-odd-bg-color         : #f9f9f9;
+$table-row-hover-bg-color       : $bg-color-base;
+
+

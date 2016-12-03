@@ -1,0 +1,14 @@
+.tags{
+
+  .tag-cloud{
+
+    a{
+      display: inline-block;
+      margin: $space*2;
+
+      &:hover{
+        color: $color-orange !important;
+      }
+    }
+  }
+}

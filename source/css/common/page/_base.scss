@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  页面基本样式
+//
+//----------------------------------------------
+
+.main-wrapper{
+  position: relative;
+  margin-left: 300px;
+  min-height: 100%;
+  background-color: $bg-color-base;
+
+  .content{
+    padding: $space*5 $space*5 150px;
+
+
+    .main-content{
+      padding: $space*2 10%;
+    }
+  }
+}
+
+.divider{
+  @include retina-one-px-border(top, $border-color-base)
+}

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  文章内容样式
+//
+//----------------------------------------------
+
+.post-content{
+  img{
+    margin: $space*3 0;
+    max-width: 100%;
+    border: $space solid $border-color-base;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, blockquote{
+    margin: $space 0 $space*3;
+  }
+
+  a{
+    color: $color-orange;
+
+    &:hover{
+      color: $link-color-blue;
+    }
+  }
+
+  .post-more{
+    display: inline-block;
+    margin-top: $space*2;
+    padding: 0 $space*4;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid ;
+    @include prefixer(border-radius, 5px);
+  }
+
+  blockquote{
+    padding: $space $space*5;
+    font-weight: normal;
+    font-size: $font-size-base;
+    border-left: 2px solid $color-blue;
+    background: $color-width-f8;
+  }
+
+}

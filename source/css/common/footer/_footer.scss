@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+//----------------------------------------------
+//  网站页尾样式
+//
+//----------------------------------------------
+
+.footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: $space*4 $space*5;
+  margin-top: 150px;
+  width: 100%;
+  color: $font-color-base;
+  background-color: $color-width;
+  border-top: $space solid $link-color-blue;
+  @include clearfix();
+
+  a{
+    font-size: $font-size-base;
+    color: $font-color-base;
+
+    &:hover{
+      color: $link-color-orange;
+    }
+  }
+
+  .copyright{
+    margin-right: $space;
+    font-size: 20px;
+    line-height: 25px;
+    vertical-align: middle;
+  }
+}

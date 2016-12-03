@@ -1,0 +1,61 @@
+
+<% if (site.posts.length > 0) { %>
+    <div class="recent-post">
+        <% site.posts.sort('date', -1).limit(theme.recent_post_num).each(function(post) { %>
+            <article class="post page-content">
+                <header class="header">
+                    <h1>
+                        <% if(post.title === ""){ %>
+                            <a href="<%=config.root + post.path%>" class="post-title">貌似忘记写标题了！</a>
+                        <%}else{%>
+                            <a href="<%=config.root + post.path%>" class="post-title"><%=post.title%></a>
+                        <%}%>
+                    </h1>
+                </header>
+                <div class="post-content main-content">
+                    <% if(post.excerpt){%>
+                        <%- post.excerpt %>
+                        <a href="<%=config.root + post.path + '#more'%>" class="post-more">阅读全文</a>
+                    <%}else{%>
+                        <%- post.content %>
+                    <%}%>
+                </div>
+
+                <p class="post-meta">
+                    <% if(post.date){ %>
+                        <span class="time iconfont">&#xe665;</span>
+                        <time datetime="<%=post.date.toJSON()%>">
+                            <%=date(post.date)%>
+                        </time>
+                    <% } %>
+                    <% if (post.categories && post.categories.length){%>
+                        <span class="post-category" >
+                            <span class="post-meta-divider">|</span>
+                            <span class="post-meta-item-icon">
+                              <i class="category-icon iconfont">&#xe614;</i>
+                            </span>
+                            <% for (var i = 0, length = post.categories.data.length; i < length; i++){ %>
+                                <a href="<%- url_for(post.categories.data[i].path) %>" itemprop="url" rel="index">
+                                  <span itemprop="name"><%- post.categories.data[i].name %></span>
+                                </a>
+                            <% } %>
+                        </span>
+                    <% } %>
+                    <% if (post.tags && post.tags.length){%>
+                        <span class="post-category" >
+                            <span class="post-meta-divider">|</span>
+                            <span class="post-meta-item-icon">
+                              <i class="category-icon iconfont">&#xe60c;</i>
+                            </span>
+                            <% for (var i = 0, length = post.tags.data.length; i < length; i++){ %>
+                                <a href="<%- url_for(post.tags.data[i].path) %>" itemprop="url" rel="index">
+                                    <span itemprop="name"><%- post.tags.data[i].name %></span>
+                                </a>
+                            <% } %>
+                        </span>
+                    <% } %>
+                </p>
+            </article>
+        <% }); %>
+    </div>
+<% } %>

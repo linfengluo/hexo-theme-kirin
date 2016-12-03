@@ -1,0 +1,14 @@
+<div id="category" class="category page-content">
+    <header class="header">
+        <h1><%= __('title.category')%></h1>
+
+    </header>
+    <div class="main-content">
+        <%- list_categories({
+            show_count: false,
+            style: 'list',
+            order: 1
+        }) %>
+    </div>
+
+</div>

@@ -1,0 +1,35 @@
+<p class="post-meta">
+    <% if(page.date){ %>
+        <span class="time iconfont">&#xe665;</span>
+        <time datetime="<%=page.date.toJSON()%>">
+            <%=date(page.date)%>
+        </time>
+    <% } %>
+    <% if (page.categories && page.categories.length){%>
+        <span class="post-category" >
+                    <span class="post-meta-divider">|</span>
+                    <span class="post-meta-item-icon">
+                      <i class="category-icon iconfont">&#xe614;</i>
+                    </span>
+            <% for (var i = 0, length = page.categories.data.length; i < length; i++){ %>
+            <a href="<%- url_for(page.categories.data[i].path) %>" itemprop="url" rel="index">
+                          <span itemprop="name"><%- page.categories.data[i].name %></span>
+                        </a>
+            <% } %>
+        </span>
+    <% } %>
+
+    <% if (page.tags && page.tags.length){%>
+        <span class="post-category" >
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+              <i class="category-icon iconfont">&#xe60c;</i>
+            </span>
+            <% for (var i = 0, length = page.tags.data.length; i < length; i++){ %>
+                <a href="<%- url_for(page.tags.data[i].path) %>" itemprop="url" rel="index">
+                  <span itemprop="name"><%- page.tags.data[i].name %></span>
+                </a>
+            <% } %>
+        </span>
+    <% } %>
+</p>
