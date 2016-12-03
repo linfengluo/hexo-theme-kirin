@@ -146,3 +146,6 @@ scripts:
 - /js/libs/jquery.lazyload.min.js
 - /js/kirin.js
 
+
+kirin_github:
+  https://github.com/linfengluo/hexo-theme-kirin
