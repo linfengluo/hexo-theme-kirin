@@ -6,7 +6,12 @@
 如果你喜欢这个主题，欢迎给我提供一些建议，或者希望增加哪些功能，我会提前帮你个性化哦；
 欢迎使用各种方法骚扰！
 
-
+# 主题预览
+![http://oh3nmq7ge.bkt.clouddn.com/theme/kirin/1.png](首页)
+![http://oh3nmq7ge.bkt.clouddn.com/theme/kirin/4.png](文章)
+![http://oh3nmq7ge.bkt.clouddn.com/theme/kirin/3.png](首页)
+![http://oh3nmq7ge.bkt.clouddn.com/theme/kirin/2.png](首页)
+更多详情可以查看我的[http://luolinfeng.com/](Blog)
 # 使用方法
 
 ## 安装依赖
