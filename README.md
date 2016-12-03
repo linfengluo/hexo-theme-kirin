@@ -1,5 +1,5 @@
 # hexo-theme-kirin
-尝试许多hexo的主题，但是都不太喜欢，所以决定结合多个主题，混搭出一个新的主题出来。暂定混搭next、yilia、huno三款主题，效果大家拭目以待吧
+尝试许多hexo的主题，但是都不太喜欢，所以决定结合多个主题，混搭出一个新的主题出来。暂定混搭[next](https://github.com/iissnan/hexo-theme-next)、[yilia](https://github.com/litten/hexo-theme-yilia)、[Gcs-Vno-Jekyll](https://github.com/GcsSloop/Gcs-Vno-Jekyll)三款主题，非常感谢他们 以及之前作者作出的贡献
 
 # 关于开发
 目前仅作为bate版，很多个性化设置和功能都没有加上去，在之后会慢慢加上去。
@@ -185,3 +185,5 @@ scripts:
 kirin_github:
   https://github.com/linfengluo/hexo-theme-kirin
 ```
+# Licence
+MIT
