@@ -1,28 +1,9 @@
-<%
-var pageTitle = page.title || '';
-if (is_archive()) pageTitle = 'Archives';
-if (is_tag()) pageTitle = 'Tag: ' + page.tag;
-if (is_category()) pageTitle = 'Category: ' + page.category;
-if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
-if (is_year()) pageTitle += ': ' + page.year;
-pageTitle += pageTitle === "" ? config.title : ' [' + config.title + ']';
-%>
+
 
 <!DOCTYPE html>
 <html lang="<%= theme.language %>">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title><%= pageTitle %></title>
-    <link rel="icon" href="/favicon.ico">
-    <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
-    <!-- stylesheets list from config.yml -->
-        <% theme.stylesheets.forEach(function(url) { %>
-            <link rel="stylesheet" href="<%= url %>">
-        <% }); %>
-    <% } %>
-    <link rel="alternate" href="atom.xml" type="application/atom+xml">
+    <%- partial('partials/head') %>
 </head>
 <body>
 
@@ -46,12 +27,7 @@ pageTitle += pageTitle === "" ? config.title : ' [' + config.title + ']';
     </footer>
 </div>
 
-<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
-<!-- scripts list from theme config.yml -->
-    <% theme.scripts.forEach(function(url) { %>
-        <script src="<%= url %>"></script>
-    <% }); %>
-<% } %>
+    <%- partial('partials/get-script') %>
 
 </body>
 </html>

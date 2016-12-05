@@ -11,7 +11,7 @@ keywords: "关键词"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: /atom.xml
 
 # Specify the date when the site was setup
 #since: 2015
@@ -59,9 +59,9 @@ asideNav:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  GitHub: https://github.com/
-  LinkLabel: https://cn.linkedin.com/
-  Email: mailto:xxxxx@gmail.com
+  GitHub: https://github.com
+  LinkLabel: https://cn.linkedin.com/in/
+  Email: mailto:xx@gmail.com
 #  Twitter: twitter
 #  Weibo: weibo
   Rss: /atom.xml
@@ -98,7 +98,7 @@ recent_post_num: 10
 
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-contribute: false
+contribute: true
 
 contribute_wechat: /images/avatar.jpg
 contribute_alipay: /images/avatar.jpg
@@ -116,11 +116,16 @@ duoshuo_info:
   ua_enable: true
   admin_enable: false
   user_id: 0
-  shortname: xxxx
+  shortname: xxx
   hotartical: true
   share: true
 
+# baidu_analysis
+baidu_analysis: false
+baidu_code: xxxx
 
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
+baidu_push: true
 
 # ---------------------------------------------------------------
 # footer Settings
@@ -134,9 +139,30 @@ license_type:
 #  知识共享署名 4.0 国际许可协议
 #  by4.0
 
+
+CDN: true
+# use cdn
+CDN_list:
+# jquery
+- https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js
+# lazyload
+- https://cdn.staticfile.org/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+# velocity
+- https://cdn.staticfile.org/velocity/1.3.1/velocity.min.js
+# fancybox
+# - https://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.min.js
+
+# other js list
+other_list:
+- /js/libs/scrollspy.js
+- /js/kirin.js
+
+
+
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/kirin.css
+# - https://cdn.staticfile.org/fancybox/2.1.5/jquery.fancybox.min.css
 
 # scripts loaded in the end of the body
 scripts:
@@ -146,6 +172,7 @@ scripts:
 - /js/libs/jquery.lazyload.min.js
 - /js/kirin.js
 
-
 kirin_github:
   https://github.com/linfengluo/hexo-theme-kirin
+
+version: 0.0.1

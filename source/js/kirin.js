@@ -16,6 +16,7 @@ $(document).ready(function () {
             _this.initResize();
             _this.initPostNav();
             _this.initLazeLoad();
+            // _this.initFancybix();
             _this.initScrollTop();
             _this.initMobildAnimation();
         },
@@ -23,11 +24,7 @@ $(document).ready(function () {
         initResize: function(){
             var _this = this;
             $(window).resize(function(){
-
                 _this.initResizeHeader();
-
-
-
             });
         },
 
@@ -106,6 +103,16 @@ $(document).ready(function () {
                 effect : "fadeIn"
             });
         },
+
+        // initFancybix: function(){
+        //     var $imgElement = $('.content img');
+        //
+        //     // $imgElement.each(function(item){
+        //     //     var url = item.attr('src');
+        //     //
+        //     // })
+        //     $(".content img").fancybox({});
+        // },
 
         initScrollTop: function(){
             var _this = this;

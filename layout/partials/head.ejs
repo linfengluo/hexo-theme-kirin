@@ -1,0 +1,67 @@
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!-- keyword setting -->
+<%
+    var keyword = "";
+    if(page.keywords){
+        keyword = page.keywords;
+    }else if(page.tags && page.tags.length){
+        page.tags.forEach(function(key){
+            keyword += key.name + " ";
+        });
+    }else if(theme.keywords){
+        keyword = theme.keywords
+    }
+%>
+<meta name="keywords" content="<%- keyword %>" />
+
+
+<!-- RSS-->
+<% if(theme.rss === '' && config.feed && config.feed.path){ %>
+    <% theme.rss = config.feed.path %>
+<% } %>
+<% if(theme.rss){ %>
+    <link rel="alternate" href="<%- url_for(theme.rss) %>" title="<%- config.title %>" type="application/atom+xml" />
+<% } %>
+
+<% if(theme.favicon){ %>
+    <link rel="shortcut icon" type="image/x-icon" href="<%- url_for(theme.favicon) %>?v=<%- theme.version %>" />
+<% } %>
+
+<meta name="author" itemprop="name" content="<%- theme.author %>">
+
+<%
+    var description = "";
+    if(page.excerpt){
+        description = strip_html(page.excerpt);
+    }else if(page.content){
+        description = strip_html(page.content);
+    }else{
+        description = config.description;
+    }
+%>
+<meta name="description" itemprop="description" content="<%- description %>">
+
+<%
+    var pageTitle = page.title || '';
+    if (is_archive()) pageTitle = 'Archives';
+    if (is_tag()) pageTitle = 'Tag: ' + page.tag;
+    if (is_category()) pageTitle = 'Category: ' + page.category;
+    if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+    if (is_year()) pageTitle += ': ' + page.year;
+    pageTitle += pageTitle === "" ? config.title : ' [' + config.title + ']';
+%>
+<title><%= pageTitle %></title>
+
+<% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+    <!-- stylesheets list from config.yml -->
+    <% theme.stylesheets.forEach(function(url) { %>
+        <link rel="stylesheet" href="<%= url %>?v=<%- theme.version %>">
+    <% }); %>
+<% } %>
+
+<!--百度分析-->
+<% if(theme.baidu_analysis){ %>
+    <%- partial('components/baidu/analysis') %>
+<% } %>
