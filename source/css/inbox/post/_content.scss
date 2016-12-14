@@ -12,8 +12,21 @@
     border: $space solid $border-color-base;
   }
 
+  h1, h2, h3, h4, h5, h6{
+    border-bottom: 1px solid #ddd;
+  }
+
   h1, h2, h3, h4, h5, h6, p, blockquote{
     margin: $space 0 $space*3;
+  }
+
+  dd, dl, ul, li, ol{
+    list-style-type: disc;
+  }
+
+  ul, ol, dl{
+    padding-left: 40px;
+    -webkit-padding-start: 40px;
   }
 
   a{
